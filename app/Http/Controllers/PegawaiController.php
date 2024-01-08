@@ -10,7 +10,6 @@ class PegawaiController extends Controller
 {
     public function index()
     {
-
         $data = pegawai::all();
         return view('../admin.datapegawai', compact('data'));
     }
@@ -18,6 +17,11 @@ class PegawaiController extends Controller
     public function tambahpegawai()
     {
         return view('../admin.tambah_pegawai');
+    }
+
+    public function datareservation()
+    {
+        return view('../admin.datareservation');
     }
 
     public function insertdata(Request $request)

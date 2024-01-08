@@ -20,6 +20,16 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
+                                <select class="form-select" name="tipe_kamar" aria-label="Default select example">
+                                    <option selected>{{ $data->tipe_kamar }}"</option>
+                                    <option value="Deluxe">Deluxe</option>
+                                    <option value="Superior">Superior</option>
+                                    <option value="Signature">Signature</option>
+                                    <option value="Standar">Standar</option>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Foto Kamar</label>
                                 <input type="file" name="foto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->alamat_pegawai }}">
                             </div>
@@ -39,15 +49,7 @@
                                 <input type="text" name="deskripsi_kamar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->deskripsi_kamar }}">
                             </div>
 
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
-                                <select class="form-select" name="tipe_kamar" aria-label="Default select example">
-                                    <option selected>{{ $data->tipe_kamar }}"</option>
-                                    <option value="Deluxe">Deluxe</option>
-                                    <option value="Superior">Superior</option>
-                                    <option value="Signature">Signature</option>
-                                    <option value="Standar">Standar</option>
-                            </div>
+
 
                             <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Keterangan</label>

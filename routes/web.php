@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\KamarController;
 use App\Models\Pegawai;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TamuController;
+use App\Http\Controllers\KamarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +27,10 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['auth', 'hakakses::admin,user']], function () {
+    Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai');
 });
 
-Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai')->middleware('auth');
+// ->middleware('auth');
 
 Route::get('/tambahpegawai', [PegawaiController::class, 'tambahpegawai'])->name('tambahpegawai');
 Route::post('/insertdata', [PegawaiController::class, 'insertdata'])->name('insertdata');
@@ -34,19 +38,37 @@ Route::post('/insertdata', [PegawaiController::class, 'insertdata'])->name('inse
 Route::get('/tampilkandata/{id}', [PegawaiController::class, 'tampilkandata'])->name('tampilkandata');
 Route::post('/updatedata/{id}', [PegawaiController::class, 'updatedata'])->name('updatedata');
 
+Route::get('/datareservation', [PegawaiController::class, 'datareservation'])->name('datareservation');
+// Route::get('/datareservation', [PegawaiController::class, 'datareservation'])->name('datareservation');
+
 Route::get('/delete/{id}', [PegawaiController::class, 'delete'])->name('delete');
 
 
 Route::get('/kamar', [KamarController::class, 'index'])->name('kamar')->middleware('auth');
 
 Route::get('/tambahkamar', [KamarController::class, 'tambahkamar'])->name('tambahkamar');
-Route::post('/insertdatakamar', [KamarController::class, 'insertdata'])->name('insertdata');
+Route::post('/insertdatakamar', [KamarController::class, 'insertdatakamar'])->name('insertdatakamar');
 
-Route::get('/tampilkandata/{id}', [KamarController::class, 'tampilkandata'])->name('tampilkandata');
-Route::post('/updatedatakamar/{id}', [KamarController::class, 'updatedata'])->name('updatedata');
+Route::get('/tampilkandatakamar/{id}', [KamarController::class, 'tampilkandatakamar'])->name('tampilkandatakamar');
+Route::post('/updatedatakamar/{id}', [KamarController::class, 'updatedatakamar'])->name('updatedatakamar');
 
-Route::get('/deletekamar/{id}', [KamarController::class, 'delete'])->name('delete');
+Route::get('/deletekamar/{id}', [KamarController::class, 'deletekamar'])->name('deletekamar');
 
+
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation')->middleware('auth');
+
+Route::get('/tambahreservation', [ReservationController::class, 'tambahreservation'])->name('tambahreservation');
+Route::post('/insertdatareservation', [ReservationController::class, 'insertdatareservation'])->name('insertdatareservation');
+
+Route::get('/tampilkandatareservation/{id}', [ReservationController::class, 'tampilkandatareservation'])->name('tampilkandatareservation');
+Route::post('/updatedatareservation/{id}', [ReservationController::class, 'updatedatareservation'])->name('updatedatareservation');
+
+Route::get('/deletereservation/{id}', [ReservationController::class, 'deletereservation'])->name('deletereservation');
+// Route::get('/reservation', [ReservationController::class, 'reservation'])->name('reservation');
+// Route::post('/booking', [ReservationController::class, 'booking'])->name('booking');
+
+Route::get('/tamu', [TamuController::class, 'index'])->name('tamu');
+Route::get('/booking', [TamuController::class, 'booking'])->name('booking');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');

@@ -32,7 +32,7 @@ class KamarController extends Controller
         return redirect()->route('kamar')->with('success', 'Data Berhasil Di Tambahkan');
     }
 
-    public function tampilkandata($id)
+    public function tampilkandatakamar($id)
     {
 
         $data = kamar::find($id);

@@ -21,6 +21,16 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Pilih</option>
+                                    <option value="Deluxe">Deluxe</option>
+                                    <option value="Superior">Superior</option>
+                                    <option value="Signature">Signature</option>
+                                    <option value="Standar">Standar</option>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Masukan Foto</label>
                                 <input type="file" name="foto" class="form-control">
                             </div>
@@ -40,15 +50,7 @@
                                 <input type="text" name="deskripsi_kamar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
 
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Tipe Kamar</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Pilih</option>
-                                    <option value="Deluxe">Deluxe</option>
-                                    <option value="Superior">Superior</option>
-                                    <option value="Signature">Signature</option>
-                                    <option value="Standar">Standar</option>
-                            </div>
+
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
 

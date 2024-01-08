@@ -260,7 +260,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/kamar" class="nav-link">
+                            <a href="/reservation" class="nav-link">
                                 <i class="nav-icon fas fa-calendar"></i>
                                 <p>
                                     Reservation

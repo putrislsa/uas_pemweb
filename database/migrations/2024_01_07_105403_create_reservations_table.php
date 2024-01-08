@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->date('check_in');
+            $table->date('check_out');
+            $table->string('jumlah_kamar');
+            $table->enum('tipe_kamar', ['deluxe', 'superior', 'signature', 'standard']);
             $table->timestamps();
         });
     }

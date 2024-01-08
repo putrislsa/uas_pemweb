@@ -16,7 +16,7 @@ class PegawaiSeeder extends Seeder
         DB::table('pegawais')->insert([
             'nama_pegawai' => 'Putri Salsa',
             'alamat_pegawai' => 'Bandung',
-            'no_hp_pegawai'=> '08131110',
+            'no_hp_pegawai' => '08131110',
             'status' => 'Manager',
             'keterangan' => 'Aktif',
         ]);
